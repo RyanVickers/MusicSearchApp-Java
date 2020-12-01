@@ -3,6 +3,10 @@ package Controllers;
 import Models.AlbumData;
 import Utilities.JSONUtility;
 import Utilities.MusicApiUtility;
+import Utilities.SceneChangerUtility;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -31,10 +35,21 @@ public class searchViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        musicListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<AlbumData>() {
 
-        updateLabels();
+            @Override
+        public void changed(ObservableValue<? extends AlbumData> observable, AlbumData oldValue, AlbumData newValue) {
+                try {
+                    MusicApiUtility.getDetailedAlbum(newValue.getIdAlbum());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+    });
+
     }
-
 
     private void updateLabels() {
         rowsReturnedLabel.setText("Rows Returned: " + musicListView.getItems().size());
@@ -51,5 +66,15 @@ public class searchViewController implements Initializable {
             e.printStackTrace();
         }
         updateLabels();
+    }
+
+
+    @FXML
+    private void changeToDetailsView(ActionEvent event) {
+        try {
+            SceneChangerUtility.changeScene(event, "/Views/albumView.fxml", "Boats");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
