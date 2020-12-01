@@ -3,18 +3,14 @@ package Models;
 import com.google.gson.annotations.SerializedName;
 
 public class SearchResult {
-
-    @SerializedName("Album")
+    @SerializedName("album")
     private AlbumData[] albums;
 
-    private String totalResults;
 
-
-    public SearchResult(AlbumData[] albums, String totalResults) {
+    public SearchResult(AlbumData[] albums) {
         setAlbums(albums);
-        setTotalResults(totalResults);
-    }
 
+    }
     public AlbumData[] getAlbums() {
         return albums;
     }
@@ -23,11 +19,4 @@ public class SearchResult {
         this.albums = albums;
     }
 
-    public String getTotalResults() {
-        return totalResults;
-    }
-
-    public void setTotalResults(String totalResults) {
-        this.totalResults = totalResults;
-    }
 }

@@ -4,55 +4,78 @@ import com.google.gson.annotations.SerializedName;
 
 public class AlbumData {
 
-    @SerializedName("Name")
-    private String name;
+    private String strAlbum;
 
-    @SerializedName("Artist")
-    private String artist;
+    private String strArtist;
 
-    @SerializedName("URL")
-    private String url;
+    private String strGenre;
 
-    @SerializedName("Mbid")
-    private String Mbid;
+    private String intYearReleased;
+
+    private  String strAlbumThumb;
+
+    private  String strDescriptionEN;
 
 
-    public AlbumData(String name, String artist, String url, String mbid) {
-        setName(name);
-        setArtist(artist);
-        setUrl(url);
-        setMbid(mbid);
-    }
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public AlbumData(String strAlbum, String strArtist, String strGenre, String intYearReleased, String strAlbumThumb, String strDescriptionEN) {
+        setStrAlbum(strAlbum);
+        setStrArtist(strArtist);
+        setStrGenre(strGenre);
+        setIntYearReleased(intYearReleased);
+        setStrAlbumThumb(strAlbumThumb);
+        setStrDescriptionEN(strDescriptionEN);
     }
 
-    public String getArtist() {
-        return artist;
+    public String getStrAlbum() {
+        return strAlbum;
     }
 
-    public void setArtist(String artist) {
-        this.artist = artist;
+    public void setStrAlbum(String strAlbum) {
+        this.strAlbum = strAlbum;
     }
 
-    public String getUrl() {
-        return url;
+    public String getStrArtist() {
+        return strArtist;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setStrArtist(String strArtist) {
+        this.strArtist = strArtist;
     }
 
-    public String getMbid() {
-        return Mbid;
+    public String getStrGenre() {
+        return strGenre;
     }
 
-    public void setMbid(String mbid) {
-        Mbid = mbid;
+    public void setStrGenre(String strGenre) {
+        this.strGenre = strGenre;
     }
 
+    public String getIntYearReleased() {
+        return intYearReleased;
+    }
+
+    public void setIntYearReleased(String intYearReleased) {
+        this.intYearReleased = intYearReleased;
+    }
+
+    public String getStrAlbumThumb() {
+        return strAlbumThumb;
+    }
+
+    public void setStrAlbumThumb(String strAlbumThumb) {
+        this.strAlbumThumb = strAlbumThumb;
+    }
+
+    public String getStrDescriptionEN() {
+        return strDescriptionEN;
+    }
+
+    public void setStrDescriptionEN(String strDescriptionEN) {
+        this.strDescriptionEN = strDescriptionEN;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Album: %s, Artist: %s, Genre: %s, Release Date: %s",this.strAlbum,this.strArtist,this.strGenre,this.intYearReleased);
+    }
 }

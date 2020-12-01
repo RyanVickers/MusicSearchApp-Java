@@ -1,5 +1,6 @@
 
 import Models.AlbumData;
+import Utilities.JSONUtility;
 import Utilities.MusicApiUtility;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,18 +12,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main extends Application {
-    public static void main(String[] args) {
-        ArrayList<AlbumData> albums;
-        try {
-            MusicApiUtility.getAlbum("C418");
-           // JSONUtility.getAlbumList("./src/JSONData/albumSearch.json");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println();
-        launch(args);
+    public static void main(String[] args) throws IOException, InterruptedException {
+      //  ArrayList<AlbumData> albums;
+        // MusicApiUtility.getAlbum("cher");
+        //JSONUtility.getAlbumList("src/JSONData/albumSearch.json");
+       // System.out.println();
+launch(args);
     }
 
     @Override
