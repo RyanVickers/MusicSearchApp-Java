@@ -19,14 +19,14 @@ public class MusicApiUtility {
                         Paths.get("src/JSONData/albumSearch.json")));
     }
 
-    public static void getDetailedAlbum(String albumId) throws IOException, InterruptedException {
-        String searchURL = "https://theaudiodb.com/api/v1/json/1/album.php?m="+albumId;
+    public static void getTracks(String albumId) throws IOException, InterruptedException {
+        String searchURL = "https://theaudiodb.com/api/v1/json/1/track.php?m="+albumId;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(searchURL)).build();
 
         HttpResponse<Path> response =
                 client.send(request, HttpResponse.BodyHandlers.ofFile(
-                        Paths.get("src/JSONData/albumInfo.json")));
+                        Paths.get("src/JSONData/trackInfo.json")));
     }
 
 }

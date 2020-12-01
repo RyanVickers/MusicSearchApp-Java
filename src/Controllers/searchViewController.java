@@ -6,14 +6,13 @@ import Utilities.MusicApiUtility;
 import Utilities.SceneChangerUtility;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -40,7 +39,7 @@ public class searchViewController implements Initializable {
             @Override
         public void changed(ObservableValue<? extends AlbumData> observable, AlbumData oldValue, AlbumData newValue) {
                 try {
-                    MusicApiUtility.getDetailedAlbum(newValue.getIdAlbum());
+                    MusicApiUtility.getTracks(newValue.getIdAlbum());
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
@@ -70,9 +69,9 @@ public class searchViewController implements Initializable {
 
 
     @FXML
-    private void changeToDetailsView(ActionEvent event) {
+    private void changeToDetailsView(MouseEvent event) {
         try {
-            SceneChangerUtility.changeScene(event, "/Views/albumView.fxml", "Boats");
+            SceneChangerUtility.changeSceneMouse(event, "/Views/trackView.fxml", "Boats");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -39,7 +39,7 @@
                 </HBox>
                 <HBox spacing="20.0">
                     <children>
-                        <ListView fx:id="musicListView" prefHeight="575.0" prefWidth="540.0" />
+                        <ListView fx:id="musicListView" onMouseClicked="#changeToDetailsView" prefHeight="575.0" prefWidth="540.0" />
                     </children>
                 </HBox>
                 <Label fx:id="rowsReturnedLabel" prefHeight="22.0" prefWidth="134.0" text="Rows Returned: ">

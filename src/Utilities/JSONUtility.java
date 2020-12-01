@@ -2,6 +2,8 @@ package Utilities;
 
 import Models.AlbumData;
 import Models.SearchResult;
+import Models.TrackData;
+import Models.TrackResult;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
@@ -14,17 +16,33 @@ public class JSONUtility {
     public static ArrayList<AlbumData> getAlbumList(String jsonFileName)
     {
         ArrayList<AlbumData> albums = new ArrayList<>();
-        Gson gson = new Gson();
+        Gson albumGson = new Gson();
         try(FileReader fileReader = new FileReader(jsonFileName);
             JsonReader jsonReader = new JsonReader(fileReader);
         )
         {
-            SearchResult searchResult = gson.fromJson(jsonReader,SearchResult.class);
+            SearchResult searchResult = albumGson.fromJson(jsonReader,SearchResult.class);
             albums.addAll(Arrays.asList(searchResult.getAlbums()));
         }catch (Exception e)
         {
            e.printStackTrace();
         }
         return albums;
+    }
+    public static ArrayList<TrackData> getTrackList(String jsonFileName)
+    {
+        ArrayList<TrackData> tracks = new ArrayList<>();
+        Gson trackGson = new Gson();
+        try(FileReader fileReader = new FileReader(jsonFileName);
+            JsonReader jsonReader = new JsonReader(fileReader);
+        )
+        {
+           TrackResult trackResult = trackGson.fromJson(jsonReader,TrackResult.class);
+            tracks.addAll(Arrays.asList(trackResult.getTracks()));
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return tracks;
     }
 }
