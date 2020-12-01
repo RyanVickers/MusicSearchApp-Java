@@ -1,4 +1,5 @@
 
+import Models.AlbumData;
 import Utilities.MusicApiUtility;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,16 +8,20 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main extends Application {
     public static void main(String[] args) {
+        ArrayList<AlbumData> albums;
         try {
-            MusicApiUtility.getAlbum("halo");
+            MusicApiUtility.getAlbum("C418");
+           // JSONUtility.getAlbumList("./src/JSONData/albumSearch.json");
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println();
         launch(args);
     }
 

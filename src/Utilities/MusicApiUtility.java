@@ -10,13 +10,13 @@ import java.nio.file.Paths;
 
 public class MusicApiUtility {
     public static void getAlbum(String search) throws IOException, InterruptedException {
-        String searchURL = "http://ws.audioscrobbler.com/2.0/?method=album.search&album="+search+"&api_key=27964084c8813b1bee610cd1fa30adf3&format=json";
+        String searchURL = "https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s="+search;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(searchURL)).build();
 
         HttpResponse<Path> response =
                 client.send(request, HttpResponse.BodyHandlers.ofFile(
-                        Paths.get("/JSONData/albumSearch.json")));
+                        Paths.get("src/JSONData/albumSearch.json")));
     }
 
 }

@@ -2,7 +2,7 @@ package Models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class MusicInfo {
+public class AlbumData {
 
     @SerializedName("Name")
     private String name;
@@ -17,7 +17,7 @@ public class MusicInfo {
     private String Mbid;
 
 
-    public MusicInfo(String name, String artist, String url, String mbid) {
+    public AlbumData(String name, String artist, String url, String mbid) {
         setName(name);
         setArtist(artist);
         setUrl(url);
