@@ -31,6 +31,7 @@ public class SceneChangerUtility {
         stage.setTitle(title);
         stage.show();
     }
+
     public static void changeSceneMouse(MouseEvent event, String viewName, String title) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(new Object() {

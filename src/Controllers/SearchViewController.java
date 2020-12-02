@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 public class SearchViewController implements Initializable {
 
     @FXML
-    private TextField textField;
+    private TextField searchTextField;
 
     @FXML
     private ListView<AlbumData> musicListView;
@@ -37,7 +37,7 @@ public class SearchViewController implements Initializable {
         musicListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<AlbumData>() {
 
             @Override
-        public void changed(ObservableValue<? extends AlbumData> observable, AlbumData oldValue, AlbumData newValue) {
+            public void changed(ObservableValue<? extends AlbumData> observable, AlbumData oldValue, AlbumData newValue) {
                 try {
                     MusicApiUtility.getAlbum(newValue.getIdAlbum());
                     System.out.println(newValue.getIdAlbum());
@@ -47,18 +47,21 @@ public class SearchViewController implements Initializable {
                     e.printStackTrace();
                 }
             }
-    });
+        });
 
     }
 
     private void updateLabels() {
         rowsReturnedLabel.setText("Rows Returned: " + musicListView.getItems().size());
     }
-@FXML
+
+    @FXML
     private void getAlbums() {
         musicListView.getItems().clear();
         try {
-            MusicApiUtility.getAlbums(textField.getText());
+            String artistName = searchTextField.getText();
+            artistName = artistName.replace(" ", "_");
+            MusicApiUtility.getAlbums(artistName);
             musicListView.getItems().addAll(JSONUtility.getAlbumList("src/JSONData/albumSearch.json"));
         } catch (IOException e) {
             e.printStackTrace();

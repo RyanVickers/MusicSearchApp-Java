@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 public class TrackViewController implements Initializable {
     @FXML
     private ListView<TrackData> trackListView;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         trackListView.getItems().clear();

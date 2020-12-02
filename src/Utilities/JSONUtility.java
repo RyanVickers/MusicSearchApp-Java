@@ -13,34 +13,29 @@ import java.util.Arrays;
 
 public class JSONUtility {
 
-    public static ArrayList<AlbumData> getAlbumList(String jsonFileName)
-    {
+    public static ArrayList<AlbumData> getAlbumList(String jsonFileName) {
         ArrayList<AlbumData> albums = new ArrayList<>();
         Gson albumGson = new Gson();
-        try(FileReader fileReader = new FileReader(jsonFileName);
-            JsonReader jsonReader = new JsonReader(fileReader);
-        )
-        {
-            SearchResult searchResult = albumGson.fromJson(jsonReader,SearchResult.class);
+        try (FileReader fileReader = new FileReader(jsonFileName);
+             JsonReader jsonReader = new JsonReader(fileReader);
+        ) {
+            SearchResult searchResult = albumGson.fromJson(jsonReader, SearchResult.class);
             albums.addAll(Arrays.asList(searchResult.getAlbums()));
-        }catch (Exception e)
-        {
-           e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return albums;
     }
-    public static ArrayList<TrackData> getTrackList(String jsonFileName)
-    {
+
+    public static ArrayList<TrackData> getTrackList(String jsonFileName) {
         ArrayList<TrackData> tracks = new ArrayList<>();
         Gson trackGson = new Gson();
-        try(FileReader fileReader = new FileReader(jsonFileName);
-            JsonReader jsonReader = new JsonReader(fileReader);
-        )
-        {
-           TrackResult trackResult = trackGson.fromJson(jsonReader,TrackResult.class);
+        try (FileReader fileReader = new FileReader(jsonFileName);
+             JsonReader jsonReader = new JsonReader(fileReader);
+        ) {
+            TrackResult trackResult = trackGson.fromJson(jsonReader, TrackResult.class);
             tracks.addAll(Arrays.asList(trackResult.getTracks()));
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return tracks;
