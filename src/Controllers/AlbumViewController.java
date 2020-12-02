@@ -84,4 +84,5 @@ public class AlbumViewController implements Initializable {
             e.printStackTrace();
         }
     }
+
 }
