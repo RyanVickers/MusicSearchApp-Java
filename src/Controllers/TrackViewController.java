@@ -20,7 +20,7 @@ public class TrackViewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         trackListView.getItems().clear();
         try {
-            trackListView.getItems().addAll(JSONUtility.getTrackList("src/JSONData/trackInfo.json"));
+             trackListView.getItems().addAll(JSONUtility.getTrackList("src/JSONData/trackInfo.json"));
         } catch (Exception e) {
             e.printStackTrace();
         }

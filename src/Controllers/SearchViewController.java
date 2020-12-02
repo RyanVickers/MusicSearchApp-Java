@@ -75,7 +75,7 @@ public class SearchViewController implements Initializable {
     @FXML
     private void changeToDetailsView(MouseEvent event) {
         try {
-            SceneChangerUtility.changeSceneMouse(event, "/Views/albumView.fxml", "Boats");
+            SceneChangerUtility.changeSceneMouse(event, "/Views/albumView.fxml", "Album Details");
         } catch (IOException e) {
             e.printStackTrace();
         }

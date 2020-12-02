@@ -29,7 +29,7 @@ launch(args);
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/style.css");
         stage.setScene(scene);
-        stage.setTitle("Music Search");
+        stage.setTitle("Album Search");
         stage.show();
     }
 }

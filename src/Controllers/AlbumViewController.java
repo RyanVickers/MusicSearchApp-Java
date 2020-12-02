@@ -44,8 +44,8 @@ public class AlbumViewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         getAlbum();
 
-
     }
+
 
     private void getAlbum() {
         try {
@@ -67,9 +67,19 @@ public class AlbumViewController implements Initializable {
     }
 
     @FXML
+    private void trackView(ActionEvent event) {
+        try {
+            MusicApiUtility.getTracks(album.get(0).getIdAlbum());
+            SceneChangerUtility.changeScene(event, "/Views/trackView.fxml", "Tracks");
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private void backToAlbumList(ActionEvent event) {
         try {
-            SceneChangerUtility.changeScene(event, "/Views/searchView.fxml", "Boats");
+            SceneChangerUtility.changeScene(event, "/Views/searchView.fxml", "Album Search");
         } catch (IOException e) {
             e.printStackTrace();
         }

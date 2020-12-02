@@ -106,10 +106,13 @@
                         <Insets left="10.0" />
                      </padding>
                   </Label>
-                  <TextArea fx:id="descriptionArea" cacheShape="false" editable="false" focusTraversable="false" prefHeight="108.0" prefWidth="440.0" wrapText="true">
+                  <TextArea fx:id="descriptionArea" cacheShape="false" editable="false" focusTraversable="false" prefHeight="108.0" prefWidth="418.0" wrapText="true">
                      <opaqueInsets>
                         <Insets top="5.0" />
                      </opaqueInsets>
+                     <HBox.margin>
+                        <Insets right="19.0" />
+                     </HBox.margin>
                   </TextArea>
                </children>
                <VBox.margin>
@@ -119,6 +122,14 @@
             <HBox alignment="CENTER" prefHeight="114.0" prefWidth="500.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#backToAlbumList" prefHeight="35.0" prefWidth="134.0" text="Back">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#trackView" prefHeight="35.0" prefWidth="134.0" text="View Tracks">
                      <font>
                         <Font size="14.0" />
                      </font>
