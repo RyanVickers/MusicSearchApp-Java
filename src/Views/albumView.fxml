@@ -1,14 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controllers.TrackViewController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AlbumViewController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="500.0">
+         <children>
+            <Label fx:id="albumLabel" alignment="CENTER" prefHeight="114.0" prefWidth="500.0">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="230.0" prefWidth="500.0">
+               <children>
+                  <VBox prefHeight="230.0" prefWidth="215.0">
+                     <children>
+                        <VBox prefHeight="469.0" prefWidth="254.0">
+                           <children>
+                              <HBox prefHeight="108.0" prefWidth="286.0">
+                                 <children>
+                                    <Label prefHeight="118.0" prefWidth="126.0" text="Artist:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="artistLabel" alignment="CENTER" prefHeight="114.0" prefWidth="130.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="108.0" prefWidth="286.0">
+                                 <children>
+                                    <Label prefHeight="118.0" prefWidth="126.0" text="Genre:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="genreLabel" alignment="CENTER" prefHeight="114.0" prefWidth="130.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="108.0" prefWidth="286.0">
+                                 <children>
+                                    <Label prefHeight="118.0" prefWidth="126.0" text="Release Date:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="releaseLabel" alignment="CENTER" prefHeight="114.0" prefWidth="130.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="108.0" prefWidth="286.0">
+                                 <children>
+                                    <Label prefHeight="118.0" prefWidth="126.0" text="Artist:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="114.0" prefWidth="130.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="525.0" prefWidth="278.0">
+                     <children>
+                        <ImageView fx:id="imageView" fitHeight="231.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="108.0" prefWidth="286.0">
+               <children>
+                  <Label prefHeight="106.0" prefWidth="117.0" text="Description:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <TextArea fx:id="descriptionArea" cacheShape="false" editable="false" focusTraversable="false" prefHeight="108.0" prefWidth="370.0" wrapText="true" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

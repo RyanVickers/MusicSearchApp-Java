@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class searchViewController implements Initializable {
+public class SearchViewController implements Initializable {
 
     @FXML
     private TextField textField;
@@ -39,7 +39,8 @@ public class searchViewController implements Initializable {
             @Override
         public void changed(ObservableValue<? extends AlbumData> observable, AlbumData oldValue, AlbumData newValue) {
                 try {
-                    MusicApiUtility.getTracks(newValue.getIdAlbum());
+                    MusicApiUtility.getAlbum(newValue.getIdAlbum());
+                    System.out.println(newValue.getIdAlbum());
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
@@ -57,7 +58,7 @@ public class searchViewController implements Initializable {
     private void getAlbums() {
         musicListView.getItems().clear();
         try {
-            MusicApiUtility.getAlbum(textField.getText());
+            MusicApiUtility.getAlbums(textField.getText());
             musicListView.getItems().addAll(JSONUtility.getAlbumList("src/JSONData/albumSearch.json"));
         } catch (IOException e) {
             e.printStackTrace();
@@ -71,7 +72,7 @@ public class searchViewController implements Initializable {
     @FXML
     private void changeToDetailsView(MouseEvent event) {
         try {
-            SceneChangerUtility.changeSceneMouse(event, "/Views/trackView.fxml", "Boats");
+            SceneChangerUtility.changeSceneMouse(event, "/Views/albumView.fxml", "Boats");
         } catch (IOException e) {
             e.printStackTrace();
         }

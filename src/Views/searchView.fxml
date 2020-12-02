@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.searchViewController">
+<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SearchViewController">
     <children>
-        <VBox prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox prefHeight="600.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -29,7 +29,7 @@
                      <font>
                         <Font size="19.0" />
                      </font></Label>
-                        <TextField fx:id="textField" prefHeight="26.0" prefWidth="320.0" />
+                        <TextField fx:id="textField" prefHeight="26.0" prefWidth="236.0" />
                   <Button mnemonicParsing="false" onAction="#getAlbums" prefHeight="26.0" prefWidth="94.0" text="Search" />
 
                     </children>
