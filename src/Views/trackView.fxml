@@ -15,11 +15,15 @@
          <children>
             <HBox prefHeight="98.0" prefWidth="439.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="70.0" prefWidth="439.0" text="Track List" textAlignment="CENTER">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </Label>
+                  <VBox prefHeight="82.0" prefWidth="502.0">
+                     <children>
+                        <Label fx:id="albumLabel" alignment="CENTER" prefHeight="86.0" prefWidth="440.0" wrapText="true">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
                </children>
             </HBox>
             <HBox prefHeight="392.0" prefWidth="439.0" spacing="20.0">

@@ -33,6 +33,9 @@ public class AlbumViewController implements Initializable {
     private Label releaseLabel;
 
     @FXML
+    private Label scoreLabel;
+
+    @FXML
     private TextArea descriptionArea;
 
     @FXML
@@ -46,7 +49,6 @@ public class AlbumViewController implements Initializable {
 
     }
 
-
     private void getAlbum() {
         try {
             album.addAll(JSONUtility.getAlbumList("src/JSONData/albumInfo.json"));
@@ -54,6 +56,7 @@ public class AlbumViewController implements Initializable {
             artistLabel.setText(album.get(0).getStrArtist());
             genreLabel.setText(album.get(0).getStrGenre());
             releaseLabel.setText(album.get(0).getIntYearReleased());
+            scoreLabel.setText(album.get(0).getIntScore());
             descriptionArea.setText(album.get(0).getStrDescriptionEN());
             try {
                 imageView.setImage(new Image(album.get(0).getStrAlbumThumb()));

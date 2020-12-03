@@ -11,12 +11,26 @@ public class SearchResult {
         setAlbums(albums);
 
     }
+
+    /**
+     * Method returns list of albums
+     *
+     * @return
+     */
     public AlbumData[] getAlbums() {
         return albums;
     }
 
+    /**
+     * method sets list of albums must contain at least one
+     *
+     * @param albums
+     */
     public void setAlbums(AlbumData[] albums) {
-        this.albums = albums;
+        if (albums.length >= 1)
+            this.albums = albums;
+        else
+            throw new IllegalArgumentException("No Albums");
     }
 
 }

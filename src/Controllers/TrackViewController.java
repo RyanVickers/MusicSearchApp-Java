@@ -1,6 +1,6 @@
 package Controllers;
 
-
+import Models.AlbumData;
 import Models.TrackData;
 import Models.TrackResult;
 import Utilities.JSONUtility;
@@ -14,6 +14,7 @@ import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class TrackViewController implements Initializable {
@@ -21,13 +22,22 @@ public class TrackViewController implements Initializable {
     private ListView<TrackData> trackListView;
 
     @FXML
+    private Label albumLabel;
+
+    @FXML
     private Label rowsReturnedLabel;
+    private ArrayList<TrackData> tracks = new ArrayList<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        getTracks();
+    }
+
+    private void getTracks() {
         trackListView.getItems().clear();
         try {
-             trackListView.getItems().addAll(JSONUtility.getTrackList("src/JSONData/trackInfo.json"));
+            tracks.addAll(JSONUtility.getTrackList("src/JSONData/trackInfo.json"));
+            trackListView.getItems().addAll(tracks);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -35,6 +45,7 @@ public class TrackViewController implements Initializable {
     }
 
     private void updateLabels() {
+        albumLabel.setText(String.format("%s Tracks", tracks.get(0).getStrAlbum()));
         rowsReturnedLabel.setText("Rows Returned: " + trackListView.getItems().size());
     }
 

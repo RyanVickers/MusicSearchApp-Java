@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AlbumViewController">
    <children>
       <VBox prefHeight="600.0" prefWidth="500.0">
@@ -70,12 +69,12 @@
                               </HBox>
                               <HBox prefHeight="108.0" prefWidth="286.0">
                                  <children>
-                                    <Label prefHeight="118.0" prefWidth="126.0" text="Artist:">
+                                    <Label prefHeight="118.0" prefWidth="126.0" text="Rating:">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label alignment="CENTER" prefHeight="114.0" prefWidth="160.0">
+                                    <Label fx:id="scoreLabel" alignment="CENTER" prefHeight="114.0" prefWidth="160.0">
                                        <font>
                                           <Font size="14.0" />
                                        </font>

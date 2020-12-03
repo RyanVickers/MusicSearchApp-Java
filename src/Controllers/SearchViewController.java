@@ -27,7 +27,7 @@ public class SearchViewController implements Initializable {
     private ListView<AlbumData> musicListView;
 
     @FXML
-    private ImageView imageView;
+    private Label warningLabel;
 
     @FXML
     private Label rowsReturnedLabel;
@@ -35,12 +35,10 @@ public class SearchViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         musicListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<AlbumData>() {
-
             @Override
             public void changed(ObservableValue<? extends AlbumData> observable, AlbumData oldValue, AlbumData newValue) {
                 try {
                     MusicApiUtility.getAlbum(newValue.getIdAlbum());
-                    System.out.println(newValue.getIdAlbum());
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
@@ -64,9 +62,9 @@ public class SearchViewController implements Initializable {
             MusicApiUtility.getAlbums(artistName);
             musicListView.getItems().addAll(JSONUtility.getAlbumList("src/JSONData/albumSearch.json"));
         } catch (IOException e) {
-            e.printStackTrace();
+            warningLabel.setText("No Artist in Matching Name, Please try Again.");
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            warningLabel.setText("No Artist in Matching Name, Please try Again.");
         }
         updateLabels();
     }

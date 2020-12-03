@@ -1,0 +1,33 @@
+.root {
+    -fx-background-color: linear-gradient(from 400px 300px to 400px 700px, #1db954, #ffffff);
+}
+
+.button {
+    -fx-background-radius: 25px;
+}
+
+.button:hover {
+
+}
+
+
+.list-view {
+
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+}
+
+.text-area {
+    -fx-border-color: black;
+}
+
+.list-view .list-cell:even {
+    -fx-background-color: grey;
+    -fx-text-fill: white;
+}
+
+.list-view .list-cell:odd {
+
+    -fx-background-color: #666666;
+    -fx-text-fill: white;
+}

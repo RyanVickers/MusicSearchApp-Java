@@ -12,11 +12,24 @@ public class TrackResult {
 
     }
 
+    /**
+     * Method returns list of tracks from album
+     *
+     * @return
+     */
     public TrackData[] getTracks() {
         return tracks;
     }
 
+    /**
+     * Method sets list of tracks must contain 1
+     *
+     * @param tracks
+     */
     public void setTracks(TrackData[] tracks) {
-        this.tracks = tracks;
+        if (tracks.length > 0)
+            this.tracks = tracks;
+        else
+            throw new IllegalArgumentException("No tracks");
     }
 }
