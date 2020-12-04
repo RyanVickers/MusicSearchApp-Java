@@ -26,7 +26,7 @@ public class SceneChangerUtility {
         }.getClass().getResource(viewName));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/style.css");
+        scene.getStylesheets().add("/Views/style.css");
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.getIcons().add(new Image("Views/icon.png"));
         stage.setScene(scene);
@@ -48,7 +48,7 @@ public class SceneChangerUtility {
         }.getClass().getResource(viewName));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/style.css");
+        scene.getStylesheets().add("/Views/style.css");
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.getIcons().add(new Image("Views/icon.png"));
         stage.setScene(scene);

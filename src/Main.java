@@ -1,7 +1,4 @@
 
-import Models.AlbumData;
-import Utilities.JSONUtility;
-import Utilities.MusicApiUtility;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +7,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Main extends Application {
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -28,7 +24,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Views/searchView.fxml"));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/style.css");
+        scene.getStylesheets().add("/Views/style.css");
         stage.setScene(scene);
         stage.getIcons().add(new Image("Views/icon.png"));
         stage.setTitle("Album Search");

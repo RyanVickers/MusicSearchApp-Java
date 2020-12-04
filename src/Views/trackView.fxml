@@ -21,7 +21,7 @@
                                 <Label fx:id="albumLabel" alignment="CENTER" prefHeight="86.0" prefWidth="440.0"
                                        wrapText="true">
                                     <font>
-                                        <Font size="25.0"/>
+                                        <Font name="Times New Roman" size="30.0"/>
                                     </font>
                                 </Label>
                             </children>

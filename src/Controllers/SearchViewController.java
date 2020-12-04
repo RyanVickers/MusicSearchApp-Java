@@ -61,7 +61,9 @@ public class SearchViewController implements Initializable {
     @FXML
     private void getAlbums() {
         musicListView.getItems().clear();
+
         try {
+            warningLabel.setText("Click on Item in list to View Info");
             String artistName = searchTextField.getText();
             artistName = artistName.replace(" ", "_");
             MusicApiUtility.getAlbums(artistName);
