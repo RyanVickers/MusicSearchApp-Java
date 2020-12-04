@@ -11,18 +11,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AlbumViewController">
+<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AlbumViewController">
     <children>
         <VBox prefHeight="600.0" prefWidth="500.0">
             <children>
-                <Label fx:id="albumLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="114.0"
-                       prefWidth="500.0" wrapText="true">
+                <Label fx:id="albumLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="114.0" prefWidth="500.0" wrapText="true">
                     <font>
-                        <Font name="Times New Roman" size="30.0"/>
+                        <Font name="Times New Roman" size="30.0" />
                     </font>
                     <VBox.margin>
-                        <Insets left="10.0"/>
+                        <Insets left="10.0" />
                     </VBox.margin>
                 </Label>
                 <HBox prefHeight="230.0" prefWidth="500.0">
@@ -35,13 +33,12 @@
                                             <children>
                                                 <Label prefHeight="118.0" prefWidth="126.0" text="Artist:">
                                                     <font>
-                                                        <Font size="18.0"/>
+                                                        <Font size="18.0" />
                                                     </font>
                                                 </Label>
-                                                <Label fx:id="artistLabel" alignment="CENTER" prefHeight="58.0"
-                                                       prefWidth="160.0" wrapText="true">
+                                                <Label fx:id="artistLabel" alignment="CENTER" prefHeight="58.0" prefWidth="160.0" wrapText="true">
                                                     <font>
-                                                        <Font size="18.0"/>
+                                                        <Font size="18.0" />
                                                     </font>
                                                 </Label>
                                             </children>
@@ -50,13 +47,12 @@
                                             <children>
                                                 <Label prefHeight="118.0" prefWidth="126.0" text="Genre:">
                                                     <font>
-                                                        <Font size="18.0"/>
+                                                        <Font size="18.0" />
                                                     </font>
                                                 </Label>
-                                                <Label fx:id="genreLabel" alignment="CENTER" prefHeight="58.0"
-                                                       prefWidth="160.0" wrapText="true">
+                                                <Label fx:id="genreLabel" alignment="CENTER" prefHeight="58.0" prefWidth="160.0" wrapText="true">
                                                     <font>
-                                                        <Font size="18.0"/>
+                                                        <Font size="18.0" />
                                                     </font>
                                                 </Label>
                                             </children>
@@ -65,13 +61,12 @@
                                             <children>
                                                 <Label prefHeight="118.0" prefWidth="126.0" text="Release Date:">
                                                     <font>
-                                                        <Font size="18.0"/>
+                                                        <Font size="18.0" />
                                                     </font>
                                                 </Label>
-                                                <Label fx:id="releaseLabel" alignment="CENTER" prefHeight="58.0"
-                                                       prefWidth="160.0" wrapText="true">
+                                                <Label fx:id="releaseLabel" alignment="CENTER" prefHeight="58.0" prefWidth="160.0" wrapText="true">
                                                     <font>
-                                                        <Font size="18.0"/>
+                                                        <Font size="18.0" />
                                                     </font>
                                                 </Label>
                                             </children>
@@ -80,30 +75,28 @@
                                             <children>
                                                 <Label prefHeight="118.0" prefWidth="126.0" text="Rating:">
                                                     <font>
-                                                        <Font size="18.0"/>
+                                                        <Font size="18.0" />
                                                     </font>
                                                 </Label>
-                                                <Label fx:id="scoreLabel" alignment="CENTER" prefHeight="114.0"
-                                                       prefWidth="160.0" wrapText="true">
+                                                <Label fx:id="scoreLabel" alignment="CENTER" prefHeight="114.0" prefWidth="160.0" wrapText="true">
                                                     <font>
-                                                        <Font size="18.0"/>
+                                                        <Font size="18.0" />
                                                     </font>
                                                 </Label>
                                             </children>
                                         </HBox>
                                     </children>
                                     <VBox.margin>
-                                        <Insets left="10.0"/>
+                                        <Insets left="10.0" />
                                     </VBox.margin>
                                 </VBox>
                             </children>
                         </VBox>
                         <VBox prefHeight="230.0" prefWidth="271.0">
                             <children>
-                                <ImageView fx:id="imageView" fitHeight="201.0" fitWidth="231.0" pickOnBounds="true"
-                                           preserveRatio="true">
+                                <ImageView fx:id="imageView" fitHeight="201.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true">
                                     <effect>
-                                        <DropShadow offsetX="1.0" offsetY="1.0" spread="0.01"/>
+                                        <DropShadow offsetX="1.0" offsetY="1.0" spread="0.01" />
                                     </effect>
                                 </ImageView>
                             </children>
@@ -114,41 +107,38 @@
                     <children>
                         <Label prefHeight="106.0" prefWidth="160.0" text="Description:">
                             <font>
-                                <Font size="18.0"/>
+                                <Font size="18.0" />
                             </font>
                             <padding>
-                                <Insets left="10.0"/>
+                                <Insets left="10.0" />
                             </padding>
                         </Label>
-                        <TextArea fx:id="descriptionArea" cacheShape="false" editable="false" focusTraversable="false"
-                                  prefHeight="130.0" prefWidth="370.0" wrapText="true">
+                        <TextArea fx:id="descriptionArea" cacheShape="false" editable="false" focusTraversable="false" prefHeight="130.0" prefWidth="370.0" wrapText="true">
                             <opaqueInsets>
-                                <Insets top="5.0"/>
+                                <Insets top="5.0" />
                             </opaqueInsets>
                             <HBox.margin>
-                                <Insets right="19.0"/>
+                                <Insets right="19.0" />
                             </HBox.margin>
                         </TextArea>
                     </children>
                     <VBox.margin>
-                        <Insets top="5.0"/>
+                        <Insets top="5.0" />
                     </VBox.margin>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="94.0" prefWidth="500.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#backToAlbumList" prefHeight="35.0" prefWidth="134.0"
-                                text="Back">
+                        <Button mnemonicParsing="false" onAction="#backToAlbumList" prefHeight="35.0" prefWidth="134.0" text="Back">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                             <HBox.margin>
-                                <Insets right="10.0"/>
+                                <Insets right="10.0" />
                             </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#trackView" prefHeight="35.0" prefWidth="134.0"
-                                text="View Tracks">
+                        <Button mnemonicParsing="false" onAction="#trackView" prefHeight="35.0" prefWidth="134.0" text="View Tracks">
                             <font>
-                                <Font size="14.0"/>
+                                <Font size="14.0" />
                             </font>
                         </Button>
                     </children>

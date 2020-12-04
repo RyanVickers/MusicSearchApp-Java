@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+//uses https://www.theaudiodb.com/api_guide.php API
 public class Main extends Application {
     public static void main(String[] args) throws IOException, InterruptedException {
         //  ArrayList<AlbumData> albums;
