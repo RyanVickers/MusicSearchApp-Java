@@ -49,6 +49,9 @@ public class AlbumViewController implements Initializable {
 
     }
 
+    /**
+     * Method to get album details and populate page with info
+     */
     private void getAlbum() {
         try {
             album.addAll(JSONUtility.getAlbumList("src/JSONData/albumInfo.json"));
@@ -56,7 +59,10 @@ public class AlbumViewController implements Initializable {
             artistLabel.setText(album.get(0).getStrArtist());
             genreLabel.setText(album.get(0).getStrGenre());
             releaseLabel.setText(album.get(0).getIntYearReleased());
-            scoreLabel.setText(album.get(0).getIntScore());
+            if (album.get(0).getIntScore() == null) {
+                scoreLabel.setText("");
+            } else
+                scoreLabel.setText(String.format("%s/10", album.get(0).getIntScore()));
             descriptionArea.setText(album.get(0).getStrDescriptionEN());
             try {
                 imageView.setImage(new Image(album.get(0).getStrAlbumThumb()));
@@ -69,6 +75,11 @@ public class AlbumViewController implements Initializable {
 
     }
 
+    /**
+     * Method to go view tracks
+     *
+     * @param event
+     */
     @FXML
     private void trackView(ActionEvent event) {
         try {
@@ -79,6 +90,11 @@ public class AlbumViewController implements Initializable {
         }
     }
 
+    /**
+     * Method to go back to album list
+     *
+     * @param event
+     */
     @FXML
     private void backToAlbumList(ActionEvent event) {
         try {

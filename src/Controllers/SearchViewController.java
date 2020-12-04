@@ -34,14 +34,13 @@ public class SearchViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Listener to get album id when item clicked
         musicListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<AlbumData>() {
             @Override
             public void changed(ObservableValue<? extends AlbumData> observable, AlbumData oldValue, AlbumData newValue) {
                 try {
                     MusicApiUtility.getAlbum(newValue.getIdAlbum());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -49,10 +48,16 @@ public class SearchViewController implements Initializable {
 
     }
 
+    /**
+     * Method to update labels
+     */
     private void updateLabels() {
         rowsReturnedLabel.setText("Rows Returned: " + musicListView.getItems().size());
     }
 
+    /**
+     * Method to get list of albums
+     */
     @FXML
     private void getAlbums() {
         musicListView.getItems().clear();
@@ -61,15 +66,17 @@ public class SearchViewController implements Initializable {
             artistName = artistName.replace(" ", "_");
             MusicApiUtility.getAlbums(artistName);
             musicListView.getItems().addAll(JSONUtility.getAlbumList("src/JSONData/albumSearch.json"));
-        } catch (IOException e) {
-            warningLabel.setText("No Artist in Matching Name, Please try Again.");
-        } catch (InterruptedException e) {
-            warningLabel.setText("No Artist in Matching Name, Please try Again.");
+        } catch (Exception e) {
+            warningLabel.setText("No Artist Matching Name, Please try Again.");
         }
         updateLabels();
     }
 
-
+    /**
+     * Method to go to details view
+     *
+     * @param event
+     */
     @FXML
     private void changeToDetailsView(MouseEvent event) {
         try {

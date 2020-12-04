@@ -14,11 +14,11 @@ import java.util.ArrayList;
 
 public class Main extends Application {
     public static void main(String[] args) throws IOException, InterruptedException {
-      //  ArrayList<AlbumData> albums;
+        //  ArrayList<AlbumData> albums;
         // MusicApiUtility.getAlbum("cher");
         //JSONUtility.getAlbumList("src/JSONData/albumSearch.json");
-       // System.out.println();
-launch(args);
+        // System.out.println();
+        launch(args);
     }
 
     @Override

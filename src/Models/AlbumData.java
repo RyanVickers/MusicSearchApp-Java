@@ -38,7 +38,10 @@ public class AlbumData {
      * @param idAlbum
      */
     public void setIdAlbum(String idAlbum) {
-        this.idAlbum = idAlbum;
+        if (!idAlbum.isBlank())
+            this.idAlbum = idAlbum;
+        else
+            throw new IllegalArgumentException("Album must contain Id");
     }
 
     /**
@@ -75,7 +78,10 @@ public class AlbumData {
      * @param strArtist
      */
     public void setStrArtist(String strArtist) {
-        this.strArtist = strArtist;
+        if (strArtist.length() < 50) {
+            this.strArtist = strArtist;
+        } else
+            throw new IllegalArgumentException("Artist name too long");
     }
 
     /**
@@ -93,7 +99,10 @@ public class AlbumData {
      * @param strGenre
      */
     public void setStrGenre(String strGenre) {
-        this.strGenre = strGenre;
+        if (strGenre.length() < 20) {
+            this.strGenre = strGenre;
+        } else
+            throw new IllegalArgumentException("Genre too long");
     }
 
     /**

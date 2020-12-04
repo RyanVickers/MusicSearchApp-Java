@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class SceneChangerUtility {
     /**
-     * Method to change scenes
+     * Method to change scenes for action events
      *
      * @param event
      * @param viewName
@@ -34,6 +34,14 @@ public class SceneChangerUtility {
         stage.show();
     }
 
+    /**
+     * Method to change scenes for mouse events
+     *
+     * @param event
+     * @param viewName
+     * @param title
+     * @throws IOException
+     */
     public static void changeSceneMouse(MouseEvent event, String viewName, String title) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(new Object() {

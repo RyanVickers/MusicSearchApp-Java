@@ -81,6 +81,6 @@ public class TrackData {
      */
     @Override
     public String toString() {
-        return String.format("Track Name: %s, Duration: %s", strTrack, intDuration);
+        return String.format("%s from %s", strTrack, strAlbum);
     }
 }

@@ -33,6 +33,9 @@ public class TrackViewController implements Initializable {
         getTracks();
     }
 
+    /**
+     * Method gets list of tracks and displays in list view
+     */
     private void getTracks() {
         trackListView.getItems().clear();
         try {
@@ -44,11 +47,19 @@ public class TrackViewController implements Initializable {
         updateLabels();
     }
 
+    /**
+     * Method updates labels
+     */
     private void updateLabels() {
         albumLabel.setText(String.format("%s Tracks", tracks.get(0).getStrAlbum()));
         rowsReturnedLabel.setText("Rows Returned: " + trackListView.getItems().size());
     }
 
+    /**
+     * Method to return to album details
+     *
+     * @param event
+     */
     @FXML
     private void backToDetailsView(ActionEvent event) {
         try {
@@ -58,6 +69,11 @@ public class TrackViewController implements Initializable {
         }
     }
 
+    /**
+     * Method to return to album search
+     *
+     * @param event
+     */
     @FXML
     private void backToAlbumList(ActionEvent event) {
         try {

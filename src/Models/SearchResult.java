@@ -9,7 +9,6 @@ public class SearchResult {
 
     public SearchResult(AlbumData[] albums) {
         setAlbums(albums);
-
     }
 
     /**
